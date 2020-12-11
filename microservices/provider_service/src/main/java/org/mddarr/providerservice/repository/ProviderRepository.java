@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ProviderRepository extends CassandraRepository<Provider, ProviderKey> {
+public interface ProviderRepository extends CassandraRepository<Provider, Long> {
 
     List<Provider> findByKeyFirstName(final String firstName);
 

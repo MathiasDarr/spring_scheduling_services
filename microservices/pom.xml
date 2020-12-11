@@ -21,8 +21,8 @@
 	<modules>
 		<module>avro-schema</module>
 <!--		<module>orders-service</module>-->
-		<module>provider_service</module>
-		<module>service-utilities</module>
+		<module>patient_service</module>
+<!--		<module>service-utilities</module>-->
 <!--		<module>producers</module>-->
 	</modules>
 

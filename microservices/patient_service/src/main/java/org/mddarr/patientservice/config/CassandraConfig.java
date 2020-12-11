@@ -1,4 +1,4 @@
-package org.mddarr.providerservice.config;
+package org.mddarr.patientservice.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
