@@ -20,7 +20,9 @@
 	</properties>
 	<modules>
 		<module>avro-schema</module>
-		<module>cassandra_product_service</module>
+<!--		<module>orders-service</module>-->
+		<module>provider_service</module>
+		<module>service-utilities</module>
 <!--		<module>producers</module>-->
 	</modules>
 
