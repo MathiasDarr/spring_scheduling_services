@@ -1,7 +1,7 @@
 package org.mddarr.providerservice.controllers;
 
-import org.mddarr.providerservice.models.Patient;
-import org.mddarr.providerservice.services.PatientsService;
+import org.mddarr.providerservice.models.Provider;
+import org.mddarr.providerservice.services.ProviderService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,14 +10,14 @@ import java.util.List;
 @RestController
 public class ProvidersController {
 
-    private final PatientsService patientsService;
+    private final ProviderService providerService;
 
-    public ProvidersController(PatientsService patientsService){
-        this.patientsService = patientsService;
+    public ProvidersController(ProviderService patientsService){
+        this.providerService = patientsService;
     }
 
-    @GetMapping(value="patients")
-    public List<Patient> getPatients(){
-        return patientsService.getPatients();
+    @GetMapping(value="providers")
+    public List<Provider> getPatients(){
+        return providerService.getProviders();
     }
 }
