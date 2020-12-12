@@ -3,6 +3,7 @@ package org.mddarr.patientservice.controllers;
 import org.mddarr.patientservice.models.Patient;
 import org.mddarr.patientservice.services.PatientsService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,4 +21,9 @@ public class PatientsController {
     public List<Patient> getPatients(){
         return patientsService.getPatients();
     }
+
+//    @PostMapping(value="patients/new")
+//    public long createNewPatient(){
+//
+//    }
 }

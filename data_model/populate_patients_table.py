@@ -13,7 +13,7 @@ from utilities.cassandra_utilities import createCassandraConnection, createKeySp
 
 
 create_patients_department_table = """CREATE TABLE IF NOT EXISTS patients(
-    patient_id int, 
+    patient_id text, 
     first_name text,
     last_name text,
     PRIMARY KEY(patient_id)
@@ -36,7 +36,7 @@ def populate_patients_table():
     with open(PROVIDERS_CSV_FILE, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            dbsession.execute(insert_provider_department, [int(row['patient_id']), row['first_name'], row['last_name']])
+            dbsession.execute(insert_provider_department, [row['patient_id'], row['first_name'], row['last_name']])
 
 
 if __name__ =='__main__':

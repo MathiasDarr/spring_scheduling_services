@@ -15,10 +15,6 @@ public class PatientsService {
         this.patientRepository = patientRepository;
     }
 
-    public Patient getPatientById(long patient_id){
-        return patientRepository.findPatientByIdIn(patient_id);
-    }
-
     public List<Patient> getPatients(){
         return patientRepository.findAllPatients();
     }

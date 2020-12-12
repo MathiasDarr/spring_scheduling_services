@@ -16,4 +16,6 @@ public interface PatientRepository extends CassandraRepository<Patient, Long> {
     @Query("SELECT * from patients;")
     List<Patient> findAllPatients();
 
+
+
 }
