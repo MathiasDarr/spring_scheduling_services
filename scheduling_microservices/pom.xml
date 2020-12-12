@@ -21,6 +21,7 @@
 	<modules>
 		<module>patient_service</module>
 		<module>provider_service</module>
+		<module>appointment_service</module>
 	</modules>
 
 	<repositories>

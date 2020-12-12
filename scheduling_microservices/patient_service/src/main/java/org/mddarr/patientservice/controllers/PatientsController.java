@@ -29,6 +29,5 @@ public class PatientsController {
     @PostMapping(value="patients/detail")
     public String createNewPatient(@RequestBody PostPatientRequest postPatientRequest){
         return patientsService.postPatient(postPatientRequest);
-        //        return patientsService.createNewPatient(postPatientRequest);
     }
 }
