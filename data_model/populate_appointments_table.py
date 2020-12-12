@@ -9,6 +9,7 @@ DO NOT USE AN INDEX
  - frequntly updated or deleted column
 
 High cardinality column w/ many distinct values, a query will incur many seeks for very few results
+
 """
 # !/usr/bin/env python3
 import os
@@ -34,7 +35,6 @@ create_patient_appointments_table = """CREATE TABLE IF NOT EXISTS patients_appoi
 """
 
 insert_patients_appointment_query = "INSERT INTO patients_appointments(patient_id, appointment_time, provider_id, length) VALUES(%s, %s, %s, %s);"
-
 
 def insert_into_patients_appointments_table(row):
     dbsession.execute(insert_patients_appointment_query,
