@@ -1,4 +1,8 @@
-spring:
-  redis:
-    host: localhost
-    port: 16379
+cassandra:
+  contactpoints: 127.0.0.1
+  port: 9042
+  keyspace: ks1
+  basepackages: org.mddarr.patientservice.repository
+  username: cassandra
+  password: cassandra
+  schema-action: NONE

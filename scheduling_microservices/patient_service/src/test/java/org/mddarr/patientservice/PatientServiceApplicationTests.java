@@ -6,24 +6,26 @@ import org.mddarr.patientservice.models.Patient;
 import org.mddarr.patientservice.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testcontainers.containers.DockerComposeContainer;
 import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.containers.wait.strategy.Wait;
 
+import java.io.File;
+import java.time.Duration;
 import java.util.List;
 
 @SpringBootTest
 class PatientServiceApplicationTests {
 
 	@ClassRule
-	public static GenericContainer cassandra =
-			new GenericContainer("cassandra:3")
-					.withExposedPorts(9042);
-
-	@Autowired
-	private PatientRepository patientRepository;
+	public static DockerComposeContainer environment =
+			new DockerComposeContainer<>(new File("src/test/resources/cassandra-compose.yml"))
+					.withExposedService("cassandra", 9042,
+							Wait.forListeningPort().withStartupTimeout(Duration.ofSeconds(30)));
 
 	@Test
 	void contextLoads() {
-		List<Patient> patients = patientRepository.findAllPatients();
+
 	}
 
 }
