@@ -1,5 +1,6 @@
 package org.mddarr.patientservice.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -9,6 +10,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @Table("patients")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Patient {
 
     @PrimaryKey("patient_id") private String patient_id;
