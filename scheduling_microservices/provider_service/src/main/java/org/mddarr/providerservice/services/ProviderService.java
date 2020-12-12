@@ -19,4 +19,8 @@ public class ProviderService {
         return providerRepository.findAllProviders();
     }
 
+    public List<Provider> getProvidersByDepartment(String department){
+        return providerRepository.findAllProvidersByDepartment(department);
+    }
+
 }

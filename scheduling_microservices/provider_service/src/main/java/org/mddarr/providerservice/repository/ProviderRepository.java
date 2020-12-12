@@ -14,4 +14,7 @@ public interface ProviderRepository extends CassandraRepository<Provider, Long> 
     @Query("SELECT * from provider_department;")
     List<Provider> findAllProviders();
 
+    @Query("SELECT * from provider_department where department_name=?0")
+    List<Provider> findAllProvidersByDepartment(String department);
+
 }

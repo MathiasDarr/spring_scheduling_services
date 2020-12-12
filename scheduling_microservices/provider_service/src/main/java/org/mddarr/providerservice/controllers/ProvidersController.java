@@ -3,6 +3,7 @@ package org.mddarr.providerservice.controllers;
 import org.mddarr.providerservice.models.Provider;
 import org.mddarr.providerservice.services.ProviderService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,5 +20,10 @@ public class ProvidersController {
     @GetMapping(value="providers")
     public List<Provider> getPatients(){
         return providerService.getProviders();
+    }
+
+    @GetMapping(value="providers/{department}")
+    public List<Provider> getPatientsByDepartment(@PathVariable String department){
+        return providerService.getProvidersByDepartment(department);
     }
 }
