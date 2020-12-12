@@ -20,7 +20,7 @@ try:
 except Exception as e:
     print(e)
 
-create_provider_department_table = """Create table provider_department(
+create_provider_department_table = """Create table IF NOT EXISTS provider_department(
     provider_id text, 
     provider_first_name text,
     provider_last_name text,

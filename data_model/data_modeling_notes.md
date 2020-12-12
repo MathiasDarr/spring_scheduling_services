@@ -7,4 +7,4 @@ Create table department(
 );
 
 
-INSERT INTO patients_appointments(patient_id, appointment_time, provider_id, length) VALUES('patien1', '2017-05-05', 'provider1',60)
+INSERT INTO patients_appointments(patient_id, appointment_time, provider_id, length) VALUES('patien1', '2018-04-26 14:59', 'provider1',60)
