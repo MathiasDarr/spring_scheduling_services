@@ -6,6 +6,7 @@ This script creates a providers table and populates it
 """
 This script populates an Apache Cassandra table with product information
 """
+# !/usr/bin/env python3
 import os
 import csv
 

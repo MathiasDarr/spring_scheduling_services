@@ -1,4 +1,4 @@
-package org.mddarr.providerservice.models;
+package org.mddarr.patientservice.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

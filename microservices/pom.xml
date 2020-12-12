@@ -19,9 +19,12 @@
 		<java.version>11</java.version>
 	</properties>
 	<modules>
-		<module>avro-schema</module>
-<!--		<module>orders-service</module>-->
 		<module>patient_service</module>
+<!--		<module>avro-schema</module>-->
+<!--		<module>scheduling_service</module>-->
+<!--		<module>orders-service</module>-->
+<!--		<module>appointment_service</module>-->
+<!--		<module>patient_service</module>-->
 <!--		<module>service-utilities</module>-->
 <!--		<module>producers</module>-->
 	</modules>
