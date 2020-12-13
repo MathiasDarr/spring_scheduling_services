@@ -29,7 +29,6 @@ create_provider_department_table = """Create table IF NOT EXISTS provider_depart
 );"""
 
 dbsession.execute(create_provider_department_table)
-
 insert_provider_department = """INSERT INTO provider_department(provider_id, provider_first_name,provider_last_name, department_name) VALUES(%s,%s,%s,%s);"""
 
 

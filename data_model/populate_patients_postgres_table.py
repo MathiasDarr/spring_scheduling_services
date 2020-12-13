@@ -35,7 +35,7 @@ def populate_tables():
 
     conn = psycopg2.connect(host="localhost", port="5432", user="postgres", password="postgres", database="postgres")
     cur = conn.cursor()
-    
+
     cur.execute(create_patients_table)
     cur.execute(create_providers_table)
     conn.commit()
