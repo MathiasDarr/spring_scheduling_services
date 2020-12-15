@@ -16,7 +16,7 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 import org.springframework.util.Assert;
 
 @Configuration
-@EnableCassandraRepositories
+@EnableCassandraRepositories(basePackages = "org.mddarr.patientservice.repository")
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Value("${cassandra.username}")
@@ -77,17 +77,9 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
         cluster.setPassword(password);
         cluster.setContactPoints(contactPoints);
         cluster.setPort(port);
+        cluster.setJmxReportingEnabled(false);
         return cluster;
     }
-
-    @Override
-    protected Session getRequiredSession() {
-        CassandraSessionFactoryBean factoryBean = session();
-        Session session = factoryBean.getObject();
-        Assert.state(session != null, "Session factory not initialized");
-        return session;
-    }
-
 
 
 }

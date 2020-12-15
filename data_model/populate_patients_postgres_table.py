@@ -33,7 +33,7 @@ insert_into_providers_table = """INSERT INTO providers(provider_id, first_name, 
 
 def populate_tables():
 
-    conn = psycopg2.connect(host="localhost", port="5432", user="postgres", password="postgres", database="postgres")
+    conn = psycopg2.connect(host="localhost", port="5432", user="postgres", password="postgres", database="postgresdb")
     cur = conn.cursor()
 
     cur.execute(create_patients_table)

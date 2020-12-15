@@ -11,7 +11,21 @@ cassandra:
   contactpoints: 127.0.0.1
   port: 9042
   keyspace: ks1
-  basepackages: org.mddarr.patientservice
+  basepackages: org.mddarr.patientservice.repository
   username: cassandra
   password: cassandra
   schema-action: NONE
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgresdb
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create

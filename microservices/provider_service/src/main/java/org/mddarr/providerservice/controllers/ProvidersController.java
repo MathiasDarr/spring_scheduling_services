@@ -1,54 +1,29 @@
 package org.mddarr.providerservice.controllers;
 
-
-
-import org.mddarr.providerservice.dto.Provider;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.mddarr.providerservice.models.Provider;
+import org.mddarr.providerservice.services.ProviderService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin
 public class ProvidersController {
 
-//    private final ProductService productService;
-//
-//    public ProvidersController(ProductService productService){
-//        this.productService = productService;
-//    }
-//
-//
-//    @GetMapping("categories")
-//    public List<Category> allCategories() {
-//        return productService.fetchCategories();
-//    }
-//
-//    @GetMapping("products")
-//    public List<Provider> allProducts() {
-//        return productService.fetchAllProducts();
-//    }
-//
-//    @GetMapping("products/vendor/{brandID}")
-//    public List<Provider> allVendorProducts(@PathVariable String brandID) {
-//        return productService.fetchAllProductsByBrand(brandID);
-//    }
-//
-//    @GetMapping("products/category/{category}")
-//    public List<Provider> allCategoryProducts(@PathVariable String category) {
-//        return productService.fetchAllProductsByCategory(category);
-//    }
-//
-//    @GetMapping("products/{brand}/{productName}")
-//    public ResponseEntity<Provider> getProduct(@PathVariable String brand, @PathVariable String productName,
-//                                               @RequestParam(name="isCacheable") boolean isCacheable ){
-//        return ResponseEntity.of(productService.getProduct(brand, productName, isCacheable));
-//    }
+    private final ProviderService providerService;
 
-//    @GetMapping
-//    public List<Product> allBrandsProducts(){
-//
-//    }
+    public ProvidersController(ProviderService patientsService){
+        this.providerService = patientsService;
+    }
 
+    @GetMapping(value="providers")
+    public List<Provider> getPatients(){
+        return providerService.getProviders();
+    }
+
+    @GetMapping(value="providers/{department}")
+    public List<Provider> getPatientsByDepartment(@PathVariable String department){
+        return providerService.getProvidersByDepartment(department);
+    }
 }
