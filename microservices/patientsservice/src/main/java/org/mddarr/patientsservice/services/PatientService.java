@@ -5,6 +5,7 @@ import org.mddarr.patientsservice.repositories.PatientRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -18,5 +19,10 @@ public class PatientService {
     public List<Patient> getPatients() {
         return patientRepository.findAll();
     }
+
+    public Optional<Patient> getPatientDetail(String id){
+        return patientRepository.findById(id);
+    }
+
 
 }
